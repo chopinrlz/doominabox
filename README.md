@@ -6,9 +6,9 @@
 
 DOOMYBOX is an open-source DOS emulator purpose-built to play the original DOOM binary from December of 1993. It's an experimental project intended to be used to educate software developers on the intricacies of hardware and hardware emulation inside a contained environment. It is also an experiment to test the limits of modern AI coding models to see if they are capable of highly complex tasks like building an x86 emulator that can run software which was compiled decades ago.
 
-Using a managed programming language to build an emulator sacrifices performance in the name of accessibility and portability. Anyone running a Windows PC can fire this up by running a terminal single command, modify the code to tweak performance, and review the code to understand how an emulator works.
+Using a managed programming language to build an emulator sacrifices performance in the name of accessibility and portability. Anyone running a Windows PC can fire this up by running a single terminal command, modify the code to tweak performance or functionality to make it their own, and review the code to understand how an emulator works.
 
-Certain portions of the emulation output are black boxed behind platform libraries, like the audio output to Windows, but the import statements and library calls are clearly visible in the source code for the emulator itself.
+Certain portions of the emulation output are black boxed behind platform libraries, like the audio output to Windows, because .NET 10 does not have managed classes (or libraries) for audio output. However, the import statements and library calls are clearly visible in the source code for the emulator itself so you can see where audio is sent for playback.
 
 ## Design
 
@@ -24,11 +24,11 @@ Developing software with AI is not free. The total cost of this application, sho
 
 ## Building Your Own Emulator
 
-Take a look at the [PLAN.md](PLAN.md) Markdown file for instructions on building your own DOOM emulator. This plan is language-agnostic so you can hand this plan to your AI tool of choice to build the emulator on any language you want.
+Take a look at the [PLAN.md](PLAN.md) Markdown file for instructions on building your own DOOM emulator. This plan is C# specific because it references .NET elements in the details. You can hand this plan directly to your AI tool of choice to build the emulator from scratch.
 
 # Getting Started
 
-You will need a few things:
+To run DOOMYBOX you will only need a few things:
 
 1. A copy of `DOOM.EXE` and `DOOM.WAD`
 2. .NET 10 SDK [https://dotnet.microsoft.com/en-us/download/dotnet/10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
@@ -40,4 +40,4 @@ Put `DOOM.EXE` and `DOOM.WAD` into their own directory somewhere. Start DOOMYBOX
 dotnet run --project .\src\DossyBoxy.WinForms\DossyBoxy.WinForms.csproj
 ```
 
-Run that command from the root of the repo.
+Run that command from the root of the repo, dotnet will compile and start DOOMYBOX.
