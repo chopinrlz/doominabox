@@ -1,10 +1,10 @@
-# DOOMYBOX
+# DOOM-IN-A-BOX
 
 > _Open-source .NET 10 C# DOS emulator for playing the O.G. id software DOOM from 1993._
 
 # Overview, Purpose & Mission
 
-DOOMYBOX is an open-source DOS emulator purpose-built to play the original DOOM binary from December of 1993. It's an experimental project intended to be used to educate software developers on the intricacies of hardware and hardware emulation inside a contained environment. It is also an experiment to test the limits of modern AI coding models to see if they are capable of highly complex tasks like building an x86 emulator that can run software which was compiled decades ago.
+DOOM-IN-A-BOX is an open-source DOS emulator purpose-built to play the original DOOM binary from December of 1993. It's an experimental project intended to be used to educate software developers on the intricacies of hardware and hardware emulation inside a contained environment. It is also an experiment to test the limits of modern AI coding models to see if they are capable of highly complex tasks like building an x86 emulator that can run software which was compiled decades ago.
 
 Using a managed programming language to build an emulator sacrifices performance in the name of accessibility and portability. Anyone running a Windows PC can fire this up by running a single terminal command, modify the code to tweak performance or functionality to make it their own, and review the code to understand how an emulator works.
 
@@ -28,16 +28,16 @@ Take a look at the [PLAN.md](PLAN.md) Markdown file for instructions on building
 
 # Getting Started
 
-To run DOOMYBOX you will only need a few things:
+To run DOOM-IN-A-BOX you will only need a few things:
 
 1. A copy of `DOOM.EXE` and `DOOM.WAD`
 2. .NET 10 SDK [https://dotnet.microsoft.com/en-us/download/dotnet/10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 3. This repo cloned somewhere locally
 
-Put `DOOM.EXE` and `DOOM.WAD` into their own directory somewhere. Start DOOMYBOX from your terminal using this command:
+Put `DOOM.EXE` and `DOOM.WAD` into their own directory somewhere. Start DOOM-IN-A-BOX from your terminal using this command:
 
 ```powershell
-dotnet run --project .\src\DossyBoxy.WinForms\DossyBoxy.WinForms.csproj
+dotnet run --project .\src\DoomInABox.WinForms\DoomInABox.WinForms.csproj
 ```
 
-Run that command from the root of the repo, dotnet will compile and start DOOMYBOX.
+Run that command from the root of the repo, dotnet will compile and start DOOM-IN-A-BOX.
