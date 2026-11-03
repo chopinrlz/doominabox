@@ -30,9 +30,11 @@ Take a look at the [PLAN.md](PLAN.md) Markdown file for instructions on building
 
 To run DOOM-IN-A-BOX you will only need a few things:
 
-1. A copy of `DOOM.EXE` and `DOOM.WAD`
+1. A copy of the DOOM shareware -- which you can get from ModDB [https://www.moddb.com/games/doom/downloads/doom-shareware-v19](https://www.moddb.com/games/doom/downloads/doom-shareware-v19) -- or the DOOM registered version if you already own it
+
 2. .NET 10 SDK [https://dotnet.microsoft.com/en-us/download/dotnet/10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
-3. This repo cloned somewhere locally
+
+3. This repo cloned somewhere locally so you can build the Windows Forms application and run it
 
 Put `DOOM.EXE` and `DOOM.WAD` into their own directory somewhere. Start DOOM-IN-A-BOX from your terminal using this command:
 
@@ -41,3 +43,18 @@ dotnet run --project .\src\DoomInABox.WinForms\DoomInABox.WinForms.csproj
 ```
 
 Run that command from the root of the repo, dotnet will compile and start DOOM-IN-A-BOX.
+
+# Sound and Music Support
+
+DOOM relied on a file called `DEFAULT.CFG` which it read at run-time to determine how to address sound and music devices. By default, this emulator uses the following hardware settings for sound and music:
+
+|Setting|Value|
+|-|-|
+|Address|220|
+|IRQ|7|
+|DMA Channel|1|
+|HDMA Channel|5|
+
+## The DOOMDATA Directory
+
+DOOM, unlike DOOM 2, only reads the `DEFAULT.CFG` file located at the fixed path `C:\DOOMDATA\DEFAULT.CFG` -- it ignores the file from the local path. As such, for sound and music to work, this emulator includes an **Exception** for DOOM, specifically, to map the `DEFAULT.CFG` file found next to the DOOM executable to the `C:\DOOMDATA\DEFAULT.CFG` so it reads the sound settings. There is a toolbar button on the emulator window which turns these exceptions on and off.
